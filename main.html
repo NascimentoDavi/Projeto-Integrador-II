@@ -6,15 +6,55 @@
     <title>Teste</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="MainCss.css">
     <style>
         #content-placeholder {
-            opacity: 0;
-            transition: opacity 0.15s ease-in-out;
+        opacity: 0;
+        transition: opacity 0.15s ease-in-out;
         }
         .show {
-            opacity: 1;
+        opacity: 1;
         }
+        body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background-color: #f1f1f1;
+        }
+
+        .content {
+        flex: 1;
+        padding: 20px;
+        }
+        .nav-item {
+        text-align: center;
+        }
+        .nav-item i {
+        display: block;
+        font-size: 20px; 
+        margin-bottom: 4px;
+        }
+        .nav-link.active i {
+        color: rgb(55, 123, 211);
+        }
+        .nav-link.active {
+        color: rgb(55, 123, 211) !important;
+        }
+        .nav-link i {
+        color: rgb(168, 168, 168);
+        }
+        .nav-link {
+        color: rgb(168, 168, 168);
+        }
+        .nav-link {
+        border: none !important; /* Remove a borda */
+        }
+        .navbar-border {
+        border-top: 1px solid rgb(199, 199, 199); /* Ajuste a espessura e a cor conforme necessário */
+        }
+        ul {
+        background-color: white;
+        }
+
     </style>
 </head>
 

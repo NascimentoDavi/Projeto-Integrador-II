@@ -6,25 +6,24 @@
     <title>Workout</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 50px;
-        }
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f1f1f1;
+}
         .container {
-            display: flex; /* Usar Flexbox */
-            justify-content: center; /* Centralizar os itens */
-            flex-wrap: wrap; /* Permitir que os itens quebrem para a próxima linha se não houver espaço suficiente */
+            display: flex; 
+            justify-content: center;
+            flex-wrap: wrap; 
         }
         .item {
             display: flex;
-            flex-direction: column; /* Colocar retângulo e lista em coluna */
-            align-items: center; /* Centralizar o conteúdo */
+            flex-direction: column; 
+            align-items: center; 
             margin: 10px;
         }
         .retangulo {
-            width: 150px; /* Largura do retângulo */
+            width: 150px;
             height: 100px;
             background-color: #4CAF50;
             display: flex;
@@ -35,16 +34,16 @@
             user-select: none;
         }
         .lista {
-            display: none; /* Inicialmente escondida */
-            margin-top: 5px; /* Espaço entre o retângulo e a lista */
+            display: none; 
+            margin-top: 5px; 
             padding: 10px;
             border: 1px solid #ccc;
-            width: 150px; /* Largura da lista igual à do retângulo */
+            width: 150px; 
             background-color: #f9f9f9;
-            text-align: left; /* Alinhamento do texto à esquerda */
+            text-align: left; 
         }
         .links {
-            margin-top: 20px; /* Espaço acima dos links */
+            margin-top: 20px; 
         }
     </style>
 </head>
@@ -60,6 +59,7 @@
             <div class="retangulo" onclick="toggleLista('lista1')">Movimentos</div>
             <div class="lista" id="lista1">
                 <ul>
+                    <li><a href="treinos/movimentos/lSit.html">L-Sit</a></li>
                     <li><a href="treinos/movimentos/handStand.html">Handstand</a></li>
                     <li><a href="treinos/movimentos/muscleUp.html">Muscle Up</a></li>
                     <li><a href="treinos/movimentos/humanFlag.html">Human Flag</a></li>
@@ -72,9 +72,9 @@
             <div class="retangulo" onclick="toggleLista('lista2')">Força</div>
             <div class="lista" id="lista2">
                 <ul>
-                    <li>Item 2.1</li>
-                    <li>Item 2.2</li>
-                    <li>Item 2.3</li>
+                    <li><a href="treinos/forca/treinoForca1.html">Treino de Força Superior</a></li>
+                    <li><a href="treinos/forca/treinoForca2.html">Treino de Força Inferior</a></li>
+                    <li><a href="treinos/forca/treinoForca3.html">Treino de Força Total</a></li>
                 </ul>
             </div>
         </div>
@@ -83,9 +83,9 @@
             <div class="retangulo" onclick="toggleLista('lista3')">Flexibilidade</div>
             <div class="lista" id="lista3">
                 <ul>
-                    <li>Item 3.1</li>
-                    <li>Item 3.2</li>
-                    <li>Item 3.3</li>
+                    <li><a href="treinos/flexibilidade/flexibilidade1.html">Treino de Flexibilidade Superior</a></li>
+                    <li><a href="treinos/flexibilidade/flexibilidade2.html">Treino de Flexibilidade Inferior</a></li>
+                    <li><a href="treinos/flexibilidade/flexibilidade3.html">Treino de Flexibilidade Total</a></li>
                 </ul>
             </div>
         </div>
@@ -94,14 +94,15 @@
             <div class="retangulo" onclick="toggleLista('lista4')">Geral</div>
             <div class="lista" id="lista4">
                 <ul>
-                    <li>Item 4.1</li>
-                    <li>Item 4.2</li>
-                    <li>Item 4.3</li>
+                    <li><a href="treinos/geral/treinoGeral1.html">Treino de Força Superior</a></li>
+                    <li><a href="treinos/geral/treinoGeral2.html">Treino de Força Superior</a></li>
+                    <li><a href="treinos/geral/treinoGeral3.html">Treino de Força Superior</a></li>
                 </ul>
             </div>
         </div>
     </div>
-
+    <br>
+    <br>
 
     <script>
         function toggleLista(listaId) {
