@@ -6,6 +6,7 @@
     <title>Teste</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="MainCss.css">
     <style>
         #content-placeholder {
         opacity: 0;
@@ -46,10 +47,10 @@
         color: rgb(168, 168, 168);
         }
         .nav-link {
-        border: none !important; /* Remove a borda */
+        border: none !important; 
         }
         .navbar-border {
-        border-top: 1px solid rgb(199, 199, 199); /* Ajuste a espessura e a cor conforme necessário */
+        border-top: 1px solid rgb(199, 199, 199); 
         }
         ul {
         background-color: white;
@@ -101,23 +102,24 @@
     <script src="https://kit.fontawesome.com/8218441c5c.js" crossorigin="anonymous"></script>
     
     <script>
+        // Função para carregar o conteúdo da aba e marcar a aba ativa
         function loadContent(file, element) {
             const links = document.querySelectorAll('.nav-link');
-
+    
             if (element.classList.contains('active')) {
                 return;
             }
-
+    
             links.forEach(link => {
                 link.classList.remove('active');
             });
-
+    
             element.classList.add('active');
-
+    
             const contentPlaceholder = document.getElementById('content-placeholder');
             contentPlaceholder.classList.remove('show');
             contentPlaceholder.style.opacity = 0;
-
+    
             setTimeout(() => {
                 fetch(file)
                     .then(response => {
@@ -128,27 +130,30 @@
                     })
                     .then(data => {
                         contentPlaceholder.innerHTML = data;
-                        const script = document.createElement('script');
-                        script.text = `
-                            function toggleLista(listaId) {
-                                const lista = document.getElementById(listaId);
-                                lista.style.display = lista.style.display === 'none' || lista.style.display === '' ? 'block' : 'none';
-                            }
-                        `;
-                        contentPlaceholder.appendChild(script);
-                        
                         contentPlaceholder.classList.add('show');
                         contentPlaceholder.style.opacity = 1;
                     })
                     .catch(error => console.error('Error loading content:', error));
             }, 300);
         }
-
+    
+        // Verifica se há parâmetros de URL para selecionar a aba correta
         document.addEventListener('DOMContentLoaded', () => {
-            const initialLink = document.querySelector('#home-tab');
-            loadContent('workout.html', initialLink);
-            initialLink.classList.add('active');
+            const params = new URLSearchParams(window.location.search);
+            const tab = params.get('tab'); // Obtém o valor do parâmetro "tab"
+            
+            if (tab === 'settings') {
+                const settingsLink = document.querySelector('#contact-tab');
+                loadContent('settings.html', settingsLink);
+                settingsLink.classList.add('active');
+            } else {
+                // Se não houver parâmetros, carrega a aba padrão (Workout)
+                const initialLink = document.querySelector('#home-tab');
+                loadContent('workout.html', initialLink);
+                initialLink.classList.add('active');
+            }
         });
     </script>
+    
 </body>
 </html>
