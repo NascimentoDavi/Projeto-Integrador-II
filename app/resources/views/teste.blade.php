@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    {{-- CSS from Bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
+    {{-- JavaScript from Bootstrap --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <!-- Option 1: Include in HTML -->
+    {{-- Bootstrap Icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
+    {{-- Custom CSS File --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     <title>Teste</title>
@@ -39,7 +43,7 @@
         </div>
     </nav>
     
-    
+
     {{-- <div class="d-flex justify-content-center gap-4 mt-4 bg-secondary px-2 py-1 border rounded-4" style="height: 50px;">
         <div class="bg-white px-3 rounded-3">1º</div>
         <div class="bg-white px-3 rounded-3">2º</div>
@@ -54,43 +58,50 @@
      <div class="container py-3">
         <div class="carousel slide" data-bs-ride="carousel" id="ads">
             <div class="carousel-inner rounded-4 position-relative">
-
                 <!-- Caption for Days of the Week -->
                 <div class="carousel-caption-days position-absolute">
                     <div class="days">
-                        <span class="day">M</span>
-                        <span class="day">S</span>
-                        <span class="day">T</span>
-                        <span class="day">W</span>
-                        <span class="day">T</span>
-                        <span class="day">F</span>
-                        <span class="day">S</span>
+                        <span class="day" data-day="0">S</span> <!-- Sunday -->
+                        <span class="day" data-day="1">M</span> <!-- Monday -->
+                        <span class="day" data-day="2">T</span> <!-- Tuesday -->
+                        <span class="day" data-day="3">W</span> <!-- Wednesday -->
+                        <span class="day" data-day="4">T</span> <!-- Thursday -->
+                        <span class="day" data-day="5">F</span> <!-- Friday -->
+                        <span class="day" data-day="6">S</span> <!-- Saturday -->
                     </div>
                 </div>
-            
+                
                 <!-- Carousel Items -->
-                <div class="carousel-item active">
+                <div class="carousel-item active" data-day="0"> <!-- Sunday -->
                     <img src="https://picsum.photos/1280/420?random=1" alt="" class="d-block w-100">
+                    <div class="caption">It's Sunday!</div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-day="1"> <!-- Monday -->
                     <img src="https://picsum.photos/1280/420?random=2" alt="" class="d-block w-100">
+                    <div class="caption">It's Monday!</div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-day="2"> <!-- Tuesday -->
                     <img src="https://picsum.photos/1280/420?random=3" alt="" class="d-block w-100">
+                    <div class="caption">Day Training!</div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-day="3"> <!-- Wednesday -->
                     <img src="https://picsum.photos/1280/420?random=4" alt="" class="d-block w-100">
+                    <div class="caption">Day Training!</div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-day="4"> <!-- Thursday -->
                     <img src="https://picsum.photos/1280/420?random=5" alt="" class="d-block w-100">
+                    <div class="caption">Day Training!</div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-day="5"> <!-- Friday -->
                     <img src="https://picsum.photos/1280/420?random=6" alt="" class="d-block w-100">
+                    <div class="caption">Day Training!</div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-day="6"> <!-- Saturday -->
                     <img src="https://picsum.photos/1280/420?random=7" alt="" class="d-block w-100">
+                    <div class="caption">Day Training!</div>
                 </div>
-            
+                
+                
                 <!-- Carousel Buttons -->
                 <div class="carousel-buttons">
                     <button class="carousel-control-prev" data-bs-target="#ads" data-bs-slide="prev">
@@ -101,34 +112,32 @@
                         <span class="carousel-control-next-icon"></span>
                     </button> 
                 </div>
-            
             </div>
-                   
-            
         </div>
     </div>
 
     <script>
-
-document.addEventListener('DOMContentLoaded', function() {
-    var carousel = document.querySelector('#ads');
-    var days = document.querySelectorAll('.carousel-caption-days .day');
-    
-    // Initialize the first day as active
-    days[0].classList.add('active');
-
-    // Add event listener for carousel slide event
-    carousel.addEventListener('slide.bs.carousel', function(event) {
-        // Remove active class from all days
-        days.forEach(day => day.classList.remove('active'));
+        document.addEventListener('DOMContentLoaded', function() {
+            var carousel = document.querySelector('#ads');
+            var days = document.querySelectorAll('.carousel-caption-days .day');
+            var captions = document.querySelectorAll('.carousel-item .caption');
         
-        // Add active class to the day corresponding to the active slide
-        days[event.to].classList.add('active');
-    });
-});
-
-
+            days[0].classList.add('active');
+            captions[0].style.display = 'block';
+        
+            var currentDay = new Date().getDay();
+        
+            carousel.addEventListener('slide.bs.carousel', function(event) {
+                days.forEach(day => day.classList.remove('active'));
+                captions.forEach(caption => caption.style.display = 'none');
+                days[event.to].classList.add('active');
+        
+                if (event.to === currentDay) {
+                    captions[event.to].style.display = 'block';
+                }
+            });
+        });
     </script>
-
+        
 </body>
 </html>
