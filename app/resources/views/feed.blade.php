@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feed</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="FeedCss.css">
+@extends('layouts.app')
+
+@section('title', 'Home')
+
+@section('content')
+
     <style>
         body {
         display: flex;
@@ -62,12 +59,9 @@
         margin-right: 15px; 
         }
     </style>
-</head>
-<body>
-    <div class="tab-pane fade show active" id="services" role="tabpanel" aria-labelledby="services-tab">
-        <h3>Feed</h3>
-    </div>
-    <br>
+
+    <h3 class="text-center">Feed</h3>
+
     <div class="container">
         <div class="post">
             <div class="feed-container">
@@ -166,5 +160,5 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+
+@endsection

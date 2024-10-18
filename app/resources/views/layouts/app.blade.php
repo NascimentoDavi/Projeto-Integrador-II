@@ -86,29 +86,31 @@
         </div>
     </nav>
 
+
+    {{-- footer --}}
     <div class="content">
         <footer>
             <ul class="nav nav-tabs justify-content-center fixed-bottom navbar-border" id="menuTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link" id="home-tab" href="#">
+                    <a class="nav-link" id="home-tab" href="{{ route('teste') }}">
                         <i class="fa-solid fa-dumbbell"></i>
                         Workout
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="about-tab" href="#">
+                    <a class="nav-link" id="about-tab" href="{{ route('feed') }}">
                         <i class="fa-solid fa-camera"></i>
                         Feed
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="services-tab" href="#">
+                    <a class="nav-link" id="services-tab" href="{{ route('messages') }}">
                         <i class="fa-solid fa-comment"></i>
                         Messages
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="contact-tab" href="#">
+                    <a class="nav-link" id="contact-tab" href="{{ route('mais') }}">
                         <i class="fas fa-cog"></i>
                         Mais...
                     </a>

@@ -1,54 +1,53 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workout</title>
+@extends('layouts.app')
+
+@section('title', 'Home')
+
+@section('content')
+
     <style>
         body {
     display: flex;
     flex-direction: column;
     height: 100vh;
     background-color: #f1f1f1;
-}
-        .container {
-            display: flex; 
-            justify-content: center;
-            flex-wrap: wrap; 
-        }
-        .item {
-            display: flex;
-            flex-direction: column; 
-            align-items: center; 
-            margin: 10px;
-        }
-        .retangulo {
-            width: 150px;
-            height: 100px;
-            background-color: #4CAF50;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            cursor: pointer;
-            user-select: none;
-        }
-        .lista {
-            display: none; 
-            margin-top: 5px; 
-            padding: 10px;
-            border: 1px solid #ccc;
-            width: 150px; 
-            background-color: #f9f9f9;
-            text-align: left; 
-        }
-        .links {
-            margin-top: 20px; 
-        }
+    }
+    .container {
+        display: flex; 
+        justify-content: center;
+        flex-wrap: wrap; 
+    }
+    .item {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        margin: 10px;
+    }
+    .retangulo {
+        width: 150px;
+        height: 100px;
+        background-color: #4CAF50;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        cursor: pointer;
+        user-select: none;
+    }
+    .lista {
+        display: none; 
+        margin-top: 5px; 
+        padding: 10px;
+        border: 1px solid #ccc;
+        width: 150px; 
+        background-color: #f9f9f9;
+        text-align: left; 
+    }
+    .links {
+        margin-top: 20px; 
+    }
     </style>
-</head>
-<body>
-    *falta adicionar icones*
+
+    
     <div class="tab-pane" id="contact" role="tabpanel" aria-labelledby="contact-tab">
         <h3>Calisthenics Workout</h3>
         <p>Selecione o tipo de treino abaixo!</p>
@@ -111,5 +110,4 @@
         }
     </script>
 
-</body>
-</html>
+@endsection
