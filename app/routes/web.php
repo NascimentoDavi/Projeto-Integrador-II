@@ -23,7 +23,6 @@ Route::get('/feed', function () {
     return view('feed');
 })->name('feed');
 
-
 Route::get('/treino/selecionardia', function () {
     return view('selecionardia');
 })->name('selecionardia');

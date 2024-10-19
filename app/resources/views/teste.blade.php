@@ -36,31 +36,31 @@
                 
                 <!-- Carousel Items -->
                 <div class="carousel-item active" data-day="0"> <!-- Sunday -->
-                    <img src="https://picsum.photos/1280/420?random=1" alt="" class="d-block w-100">
+                    <img src="{{ asset('images/treino_ombro.svg') }}" alt="" class="d-block w-100">
                     <div class="caption">It's Sunday!</div>
                 </div>
                 <div class="carousel-item" data-day="1"> <!-- Monday -->
-                    <img src="https://picsum.photos/1280/420?random=2" alt="" class="d-block w-100">
+                    <img src="{{ asset('images/treino_doido.svg') }}" alt="" class="d-block w-100">
                     <div class="caption">It's Monday!</div>
                 </div>
                 <div class="carousel-item" data-day="2"> <!-- Tuesday -->
-                    <img src="https://picsum.photos/1280/420?random=3" alt="" class="d-block w-100">
+                    <img src="{{ asset('images/treino_doido2.svg') }}" alt="" class="d-block w-100">
                     <div class="caption">Day Training!</div>
                 </div>
                 <div class="carousel-item" data-day="3"> <!-- Wednesday -->
-                    <img src="https://picsum.photos/1280/420?random=4" alt="" class="d-block w-100">
+                    <img src="{{ asset('images/treino_perna.svg') }}" alt="" class="d-block w-100">
                     <div class="caption">Day Training!</div>
                 </div>
                 <div class="carousel-item" data-day="4"> <!-- Thursday -->
-                    <img src="https://picsum.photos/1280/420?random=5" alt="" class="d-block w-100">
+                    <img src="{{ asset('images/treino_abdomen.svg') }}" alt="" class="d-block w-100">
                     <div class="caption">Day Training!</div>
                 </div>
                 <div class="carousel-item" data-day="5"> <!-- Friday -->
-                    <img src="https://picsum.photos/1280/420?random=6" alt="" class="d-block w-100">
+                    <img src="{{ asset('images/treino_costas.svg') }}" alt="" class="d-block w-100">
                     <div class="caption">Day Training!</div>
                 </div>
                 <div class="carousel-item" data-day="6"> <!-- Saturday -->
-                    <img src="https://picsum.photos/1280/420?random=7" alt="" class="d-block w-100">
+                    <img src="{{ asset('images/treino_braco.svg') }}" alt="" class="d-block w-100">
                     <div class="caption">Day Training!</div>
                 </div>
                 
