@@ -77,3 +77,182 @@
     z-index: 10;      /* Higher z-index to ensure it appears above the carousel images */
     display: none;     /* Initially hidden */
 }
+
+.card {
+    position: relative;
+    border-radius: 10px; /* Gives rounded corners like in the image */
+    overflow: hidden; /* Ensures the image doesn't overflow */
+}
+
+.img-right {
+    width: 60%; /* Adjust width to fit image as per design */
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers its container without distortion */
+    float: right; /* Moves the image to the right */
+    border-radius: 0 10px 10px 0; /* Only round the right side */
+}
+
+.gradient-overlay {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)); /* Dark gradient from left to right */
+    color: white; /* White text for contrast */
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50%; /* Limit overlay to half of the card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-text i {
+    color: white; /* White icons */
+    margin-right: 5px;
+}
+
+.text-info {
+    color: #00bcd4; /* Custom color for blue text */
+}
+
+/* Estilizando o modal */
+.modal-content {
+    background-color: #f8f9fa; /* Cor de fundo */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.modal-header {
+    border-bottom: 2px solid #007bff; /* Linha inferior da header */
+}
+
+.modal-title {
+    font-weight: bold; /* Negrito no título */
+}
+
+.modal-body {
+    font-size: 16px; /* Tamanho da fonte do corpo */
+}
+
+.form-check-input {
+    margin-right: 10px; /* Espaço entre o checkbox e o texto */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Cor do botão */
+    border: none; /* Remover borda do botão */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Cor do botão secundário */
+}
+
+.float-add-post-button{
+    z-index: 100;
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+}
+.float-add-post-button button {
+    color: white;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.float-return-selecdia {
+    z-index: 100;
+    position: fixed;
+    left: 20px;
+    bottom: 80px;
+}
+.float-return-selecdia button {
+    color: white;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.float-return-selecdia, .float-add-post-button  {
+    color: rgb(124, 3, 3);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: border 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.float-return-selecdia:hover {
+    border: 2px solid rgb(124, 3, 3);
+}
+
+.float-add-post-button:hover {
+    border: 2px solid rgb(124, 3, 3);
+}
+
+/* Estilos para o botão flutuante */
+.floating-btn {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+/* Estilos para o fundo escurecido */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none; /* Começa oculto */
+}
+
+.floating-options {
+    position: fixed;
+    bottom: 90px;
+    right: 90px;
+    display: none; /* Começa oculto */
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1001;
+}
+
+/* Estilos para os botões menores */
+.action-buttons {
+    display: none;
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    z-index: 100;
+}
+.action-buttons button {
+    display: block;
+    margin-bottom: 10px;
+}

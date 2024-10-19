@@ -13,7 +13,7 @@
         }
         .feed-container {
         max-width: 600px;
-        margin: 20px auto;
+        margin: 0px auto 20px auto;
         background: white;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -59,8 +59,6 @@
         margin-right: 15px; 
         }
     </style>
-
-    <h3 class="text-center">Feed</h3>
 
     <div class="container">
         <div class="post">
@@ -156,7 +154,13 @@
         </div>
     </div>
     <br>
-    <br>
+
+    <div class="float-add-post-button">
+        <button class="btn rounded-circle">
+            +
+        </button>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

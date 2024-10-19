@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('teste');
-});
+})->name('teste');
 
 // routes/web.php
 Route::get('/messages', function () {
@@ -22,3 +22,8 @@ Route::get('/workout', function () {
 Route::get('/feed', function () {
     return view('feed');
 })->name('feed');
+
+
+Route::get('/treino/selecionardia', function () {
+    return view('selecionardia');
+})->name('selecionardia');

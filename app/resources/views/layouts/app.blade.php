@@ -17,6 +17,13 @@
     {{-- Custom CSS File --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+    <!-- Include Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Include Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
     <title>@yield('title', 'Teste')</title>
 </head>
 <body>
@@ -35,6 +42,10 @@
         height: 100vh;
         background-color: #f1f1f1;
         }
+        nav {
+            background-color: rgb(235, 234, 234);
+            border-bottom: 2px solid rgb(124, 3, 3);
+        }
         .nav-item {
         text-align: center;
         }
@@ -44,31 +55,50 @@
         margin-bottom: 4px;
         }
         .nav-link.active i {
-        color: rgb(55, 123, 211);
+        color: rgb(124, 3, 3);
         }
         .nav-link.active {
-        color: rgb(55, 123, 211) !important;
+        color: rgb(124, 3, 3) !important;
         }
         .nav-link i {
-        color: rgb(168, 168, 168);
+        color: rgb(124, 3, 3);
         }
         .nav-link {
-        color: rgb(168, 168, 168);
+        color: rgb(124, 3, 3);
+        }
+        .nav-link:hover {
+            color: rgb(224, 5, 5)
         }
         .nav-link {
-        border: none !important; /* Remove a borda */
+        border: none !important;
         }
         .navbar-border {
-        border-top: 1px solid rgb(199, 199, 199); /* Ajuste a espessura e a cor conforme necessário */
+        border-top: 1px solid rgb(124, 3, 3);
         }
         ul {
-        background-color: white;
+        background-color: rgb(235, 234, 234);
         }
-
+        .active-link {
+            font-weight: bold;
+            font-size: 107%;
+        }
+        .active-icon {
+            
+        }
+        .icon-grow {
+            transition: font-size 1s;
+        }
+        .icon-grow:hover {
+            font-size: 28px;
+        }
+        .btn {
+            background-color: rgb(124, 3, 3);
+            color: white;
+        }
     </style>
 
-    <nav class="navbar bg-light">
-        <div class="container d-flex align-items-center">
+    <nav class="navbar">
+        <div class="container d-flex align-items-center py-2">
             <img src="{{ asset('images/profile_photo.png') }}" alt="Profile Photo" class="rounded-circle me-2" width="40" height="40">
             <a href="" class="navbar-brand">Davi Rodrigues</a>
     
@@ -88,30 +118,30 @@
 
 
     {{-- footer --}}
-    <div class="content">
+    <div class="content position-absolute bottom-0">
         <footer>
-            <ul class="nav nav-tabs justify-content-center fixed-bottom navbar-border" id="menuTab" role="tablist">
+            <ul class="nav nav-tabs justify-content-center fixed-bottom navbar-border-5 pt-2" id="menuTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link" id="home-tab" href="{{ route('teste') }}">
-                        <i class="fa-solid fa-dumbbell"></i>
+                    <a class="nav-link {{ request()->routeIs('teste') ? 'active-link' : '' }}" id="home-tab" href="{{ route('teste') }}">
+                        <i class="fa-solid fa-dumbbell icon-grow"></i>
                         Workout
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="about-tab" href="{{ route('feed') }}">
-                        <i class="fa-solid fa-camera"></i>
+                    <a class="nav-link {{ request()->routeIs('feed') ? 'active-link' : '' }}" id="about-tab" href="{{ route('feed') }}">
+                        <i class="fa-solid fa-camera icon-grow"></i>
                         Feed
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="services-tab" href="{{ route('messages') }}">
-                        <i class="fa-solid fa-comment"></i>
+                    <a class="nav-link {{ request()->routeIs('messages') ? 'active-link' : '' }}" id="services-tab" href="{{ route('messages') }}">
+                        <i class="fa-solid fa-comment icon-grow"></i>
                         Messages
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="contact-tab" href="{{ route('mais') }}">
-                        <i class="fas fa-cog"></i>
+                    <a class="nav-link {{ request()->routeIs('mais') ? 'active-link' : '' }}" id="contact-tab" href="{{ route('mais') }}">
+                        <i class="fas fa-cog icon-grow"></i>
                         Mais...
                     </a>
                 </li>
@@ -128,6 +158,7 @@
     <!-- Conteúdo da View -->
     <div class="container mt-4">
         @yield('content')
+        <div class="bg-dark my-5 py-1"></div>
     </div>
 
     {{-- JavaScript from Bootstrap --}}
