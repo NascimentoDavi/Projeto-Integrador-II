@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     protected $primaryKey = 'user_id';
-    public $incrementing = false; // For UUID's
-    protected $keyType = 'string'; // UUID Type
+    public $incrementing = false;
+    protected $keyType = 'string';
 
     protected $fillable = [
         'user_id',
@@ -20,7 +20,6 @@ class User extends Model
         'fitness_level',
         'physical_stats',
         'current_training_program',
-        'workout_agenda',
         'completed_workouts',
         'ofensive',
         'last_workout_date',
@@ -30,7 +29,6 @@ class User extends Model
 
     protected $casts = [
         'physical_stats' => 'array',
-        'workout_agenda' => 'array',
         'completed_workouts' => 'array',
         'last_workout_date' => 'datetime',
     ];

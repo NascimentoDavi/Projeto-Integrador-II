@@ -8,10 +8,11 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('trainer_exercise', function (Blueprint $table) {
+        Schema::create('user_exercise', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('exercise_id')->constrained('exercises');
+            $table->uuid('user_id');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->foreignId('exercise_id')->constrained('exercises')->onDelete('cascade');
             $table->string('day_of_week');
             $table->timestamps();
         });
@@ -19,6 +20,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('trainer_exercise');
+        Schema::dropIfExists('user_exercise');
     }
 };

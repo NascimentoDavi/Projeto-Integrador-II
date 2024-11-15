@@ -18,7 +18,7 @@ class Trainer extends User
 
     public function teacher ()
     {
-        return $this->belongsTo(Teacher::class, 'user_id');
+        return $this->belongsTo(Teacher::class, 'teacher_id');
     }
 
 }

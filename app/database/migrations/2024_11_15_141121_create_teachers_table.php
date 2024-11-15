@@ -8,23 +8,19 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('feeds', function (Blueprint $table) {
-            $table->uuid('feed_id')->primary();
-            $table->uuid('user_id');
-            
-            $table->string('photo_url');
-            $table->text('caption')->nullable();
+        Schema::create('teachers', function (Blueprint $table) {
+            $table->uuid('teacher_id')->primary();
+            $table->uuid('user_id')->unique();
             $table->timestamps();
-
             $table->foreign('user_id')
                   ->references('user_id')
                   ->on('users')
-                  ->onDelete('cascade'); // Deletes the feed photos if the user is deleted
+                  ->onDelete('cascade');
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('feeds');
+        Schema::dropIfExists('teachers');
     }
 };

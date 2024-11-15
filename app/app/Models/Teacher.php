@@ -19,7 +19,7 @@ class Teacher extends User
     // Relationship with Trainer
     public function trainers ()
     {
-        return $this->hasMany(Trainer::class, 'user_id');
+        return $this->hasMany(Trainer::class, 'teacher_id');
     }
 
     // Method to create a weekly-training-agenda for each Trainer it has

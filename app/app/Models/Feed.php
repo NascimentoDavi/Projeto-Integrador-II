@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Feed extends Model
 {
-    protected $fillable= [
+
+    protected $fillable = [
         'user_id',
         'photo_url',
         'caption'
     ];
 
-    public function user ()
+    public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'user_id');
     }
 }
