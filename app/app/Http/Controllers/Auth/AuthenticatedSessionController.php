@@ -28,12 +28,16 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->route('workout');
+        $username = auth()->user()->username;
+
+        // Redirect cannot pass variables
+        // return redirect()->route('workout', compact('username'));
+
+        session(['username' => $username]);
+
+        return view('teste', compact('username'));
     }
 
-    /**
-     * Destroy an authenticated session.
-     */
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
@@ -42,6 +46,9 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
+        $request->session()->forget('username');
+
         return redirect('/');
     }
+
 }

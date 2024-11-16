@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 Route::get('/', function () {
     return redirect()->route('login');
-});
+})->name('login-page');
+
+Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 // routes/web.php
 Route::get('/messages', function () {

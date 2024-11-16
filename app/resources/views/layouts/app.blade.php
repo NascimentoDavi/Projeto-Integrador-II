@@ -97,24 +97,40 @@
         }
     </style>
 
-    <nav class="navbar">
-        <div class="container d-flex align-items-center py-2">
-            <img src="{{ asset('images/profile_photo.png') }}" alt="Profile Photo" class="rounded-circle me-2" width="40" height="40">
-            <a href="" class="navbar-brand">Davi Rodrigues</a>
-    
-            <!-- Notification Icon -->
-            <a href="#" class="ms-auto position-relative me-3">
-                <i class="fas fa-bell fa-lg"></i>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span> <!-- Example count -->
+<nav class="navbar">
+    <div class="container d-flex align-items-center py-2">
+        <img src="{{ asset('images/profile_photo.png') }}" alt="Profile Photo" class="rounded-circle me-2" width="40" height="40">
+
+        {{-- Is possible to pass a variable from view into layout --}}
+        <div class="dropdown">
+            <a href="#" class="navbar-brand dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ session('username') }}
             </a>
-    
-            <!-- Streak Fire Icon -->
-            <a href="#" class="position-relative">
-                <i class="fas fa-fire fa-lg"></i>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">5</span> <!-- Example streak days -->
-            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ route('mais') }}">Ir para 'Mais'</a></li>
+                <li>
+                    <form action="{{ route('logout') }}" method="GET" class="dropdown-item">
+                        @csrf
+                        <button type="submit" class="btn btn-link">Log out</button>
+                    </form>
+                </li>
+            </ul>
         </div>
-    </nav>
+
+        <!-- Notification Icon -->
+        <a href="#" class="ms-auto position-relative me-3">
+            <i class="fas fa-bell fa-lg"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span> <!-- Example count -->
+        </a>
+
+        <!-- Streak Fire Icon -->
+        <a href="#" class="position-relative">
+            <i class="fas fa-fire fa-lg"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">5</span> <!-- Example streak days -->
+        </a>
+    </div>
+</nav>
+
 
 
     {{-- footer --}}
