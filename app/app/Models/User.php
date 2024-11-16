@@ -3,8 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
+use App\Enums\Role;
 
-class User extends Model
+class User extends Authenticatable
 {
     protected $primaryKey = 'user_id';
     public $incrementing = false;
@@ -15,6 +19,7 @@ class User extends Model
         'username',
         'full_name',
         'email',
+        'password',
         'phone_number',
         'profile_picture_url',
         'fitness_level',

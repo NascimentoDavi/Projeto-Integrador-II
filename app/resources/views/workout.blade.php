@@ -12,7 +12,7 @@
     background-color: #f1f1f1;
     }
     .container {
-        display: flex; 
+        display: flex;
         justify-content: center;
         flex-wrap: wrap; 
     }

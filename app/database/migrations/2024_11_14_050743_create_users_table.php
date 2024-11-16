@@ -12,7 +12,7 @@ return new class extends Migration
             $table->uuid('user_id')->primary();
             
             $table->string('username')->unique();
-            $table->string('full_name');
+            $table->string('full_name')->nullable();
             $table->string('email')->unique();
             $table->string('phone_number')->nullable();
             $table->string('profile_picture_url')->nullable();
@@ -32,4 +32,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('users');
     }
+    
 };

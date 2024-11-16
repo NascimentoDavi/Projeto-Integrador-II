@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Enums\MusclesArea;
+use App\Enums\DifficultyLevel;
 
 class Exercise extends Model
 {

@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('teste');
-})->name('teste');
+    return redirect()->route('login');
+});
 
 // routes/web.php
 Route::get('/messages', function () {
@@ -17,7 +17,7 @@ Route::get('/mais', function () {
 
 Route::get('/workout', function () {
     return view('teste');
-})->name('teste');
+})->name('workout');
 
 Route::get('/feed', function () {
     return view('feed');
@@ -26,3 +26,15 @@ Route::get('/feed', function () {
 Route::get('/treino/selecionardia', function () {
     return view('selecionardia');
 })->name('selecionardia');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
